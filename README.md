@@ -13,22 +13,23 @@ filename in `/tmp/` derived from the current PID.
 
 ## Inside the debug prompt
 
-Before displaying the prompt, `dbg` collects and lists the available variables from the
+Before displaying the prompt, `dbg` collects and lists the available local variables from the
 current scope and the parent scopes, and assigns unique names to them.
 The variable names may be prefixed by the name
 of the current level or function, or '*' may be added to them to disambiguate them.
 
 In the prompt, use:
 
-- `dbg.print('variablename')` or `dbg.p('variablename')` to print the value of a variable.
+- `dbg.print('variablename')` or `dbg.p('variablename')` to print the value of a
+local variable.
 
-- `dbg.get('variablename')` or `dbg.g('variablename')` to return the value of a variable
-(useful if the variable is a table to modify it).
+- `dbg.get('variablename')` or `dbg.g('variablename')` to return the value of a
+local variable (useful if it is a table, to modify a value in it).
 
-- `dbg.set('variablename', value)` or `dbg.s('variablename', value)` to change the value
-of a variable.
+- `dbg.set('variablename', value)` or `dbg.s('variablename', value)` to change the
+value of a local variable.
 
-- `dbg.varinfo()` to repeat the list of variables.
+- `dbg.varinfo()` to repeat the list of local variables.
 
 - Type `cont` or press `^D` to allow the script to continue.
 

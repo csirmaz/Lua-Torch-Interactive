@@ -15,8 +15,8 @@ filename in /tmp/ derived from the current PID.
 Inside the debug prompt
 -----------------------
 
-Before displaying the prompt, "dbg" collects and lists the available variables from the
-current scope and the parent scopes, and assigns unique names to them.
+Before displaying the prompt, "dbg" collects and lists the available local variables from
+the current scope and the parent scopes, and assigns unique names to them.
 
 For the convenience functions available in the debug prompt see the text in dbg.help below.
 
@@ -38,22 +38,25 @@ dbg = {
 -- Print help
 dbg.help = function()
   print([[
-Welcome to the Lua prompt. Here you can inspect and modify variables, call functions, etc.
-before continuing with your script. The variables available are from the current scope and
-the parent scopes. These are listed above. The variable names may be prefixed by the name
-of the current level or function, or '*' may be added to them to disambiguate them.
+Welcome to the Lua prompt.  Here you can inspect and modify variables, call
+functions, etc. before continuing with your script.  The local variables
+available are from the current scope and the parent scopes.  These are
+listed above.  The variable names may be prefixed by the name of the current
+level or function, or '*' may be added to them to disambiguate them.  Global
+variables are also available; these are not listed.
 
 In the prompt, use:
 
-dbg.print('variablename') or dbg.p('variablename') to print the value of a variable.
+dbg.print('variablename') or dbg.p('variablename') to print the value of a
+    local variable.
 
-dbg.get('variablename') or dbg.g('variablename') to return the value of a variable
-    (useful if the variable is a table to modify it).
+dbg.get('variablename') or dbg.g('variablename') to return the value of a
+    local variable (useful if it is a table, to modify a value in it).
 
-dbg.set('variablename', value) or dbg.s('variablename', value) to change the value
-    of a variable.
+dbg.set('variablename', value) or dbg.s('variablename', value) to change the
+    value of a local variable.
 
-dbg.varinfo() to repeat the list of variables.
+dbg.varinfo() to repeat the list of local variables.
 
 Type 'cont' or press ^D to allow the script to continue.
 Type ^C,^D or run 'os.exit()' to abort.
