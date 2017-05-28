@@ -9,8 +9,8 @@ Triggering the prompt
 Use dbg.enter() in the program to drop the user into the prompt.
 
 Alternatively, use dbg.enter_if_file(triggerfile) to drop the user into the prompt if
-triggerfile exists. If not given, the argument defaults to dbg.trigger_file, which is a file
-in /tmp/ derived from the current PID.
+triggerfile exists. If not given, the argument defaults to dbg.trigger_file, which is a
+filename in /tmp/ derived from the current PID.
 
 Inside the debug prompt
 -----------------------
